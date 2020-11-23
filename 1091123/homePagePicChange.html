@@ -9,12 +9,70 @@
   <body>
     <div class="backGround">
       <div class="nav">
-        <img src="./img/logo.png" alt="No" class="logo" />
+        <div>
+          <img src="./img/logo.png" alt="No" class="logo" />
+        </div>
         <div class="user">
-          <button class="navBtn">Click</button>
+          <button class="navBtn">ALNW</button>
           <img src="./img/ALNW-circle-s.png" alt="No" class="avatar" />
         </div>
       </div>
+      <div class="content">
+        <div class="info">
+          <h2>Discover</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, eaque
+            in tempore qui officiis quos ex rem temporibus consectetur cum
+            incidunt iste dolor?
+          </p>
+          <input type="text" placeholder="搜尋關鍵字" />
+        </div>
+      </div>
+      <div class="slider">
+        <img src="./img/left-arrow.png" alt="No" id="prev" />
+        <div class="preview">
+          <img src="./img/yellow-s.jpg" alt="No" class="active thumbnail" />
+          <img src="./img/shoes-s.jpg" alt="No" class="thumbnail" />
+          <img src="./img/red-s.jpg" alt="No" class="thumbnail" />
+          <img src="./img/blue-s.jpg" alt="No" class="thumbnail" />
+          <img src="./img/black-s.jpg" alt="No" class="thumbnail" />
+        </div>
+        <img src="./img/right-arrow.png" alt="No" id="next" />
+      </div>
     </div>
+
+    <script>
+      let prev = document.querySelector("#prev");
+      let next = document.querySelector("#next");
+      let backGround = document.querySelector(".backGround");
+      let thumbnail = document.getElementsByClassName("thumbnail");
+
+      let BGImg = new Array(
+        "img/yellow.jpg",
+        "img/shoes.jpg",
+        "img/red.jpg",
+        "img/blue.jpg",
+        "img/black.jpg"
+      );
+      let i = 0;
+      prev.onclick = function () {
+        //   限制i要大於0
+        if (i > 0) {
+          backGround.style.backgroundImage = 'url("' + BGImg[i - 1] + '")';
+          thumbnail[i - 1].classList.add("active");
+          thumbnail[i].classList.remove("active");
+          i--;
+        }
+      };
+      next.onclick = function () {
+        //   限制i要小於總數
+        if (i < 4) {
+          backGround.style.backgroundImage = 'url("' + BGImg[i + 1] + '")';
+          thumbnail[i + 1].classList.add("active");
+          thumbnail[i].classList.remove("active");
+          i++;
+        }
+      };
+    </script>
   </body>
 </html>

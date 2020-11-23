@@ -7,7 +7,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url(./img/yellow.jpg);
+  background-image: url(img/yellow.jpg);
   background-size: cover;
   background-position: center;
   .nav {
@@ -16,24 +16,96 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    .logo {
-      //   width: 90px;
+    z-index: 2;
+    div {
       margin: 30px 0;
       cursor: pointer;
+      .logo {
+        width: 50%;
+      }
     }
     .user {
+      display: flex;
+      align-items: center;
       .navBtn {
-        width: 90px;
-        margin: 30px 0;
+        margin-right: 40px;
+        font-size: 18px;
         background-color: transparent;
         outline: none;
-        border: 2px solid #fff;
+        border: 3px solid #fff;
         color: #fff;
-        padding: 5px;
-        border-radius: 10px;
+        padding: 6px 24px;
+        border-radius: 24px;
+        cursor: pointer;
       }
       .avatar {
-        width: 90px;
+        width: 70px;
+      }
+    }
+  }
+  .content {
+    width: 35%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(100, 100, 100, 0.2);
+    backdrop-filter: blur(10px);
+    .info {
+      width: 80%;
+      color: #fff;
+      position: absolute;
+      right: -20%;
+      top: 50%;
+      transform: translateY(-50%);
+      h2 {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      input {
+        width: 30%;
+        outline: none;
+        padding: 5px 15px;
+        border: 2px solid #fff;
+        border-radius: 18px;
+        color: #fff;
+        font-size: 12px;
+        background-color: transparent;
+      }
+      ::placeholder {
+        color: #fff;
+      }
+    }
+  }
+  .slider {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    right: 45px;
+    #prev,
+    #next {
+      width: 30px;
+      cursor: pointer;
+    }
+    .preview {
+      display: flex;
+      align-items: center;
+      padding: 0 50px;
+      img {
+        width: 150px;
+        margin: 0 10px;
+        opacity: 0.5;
+      }
+      .active {
+        display: block;
+        border: 3px solid #fff;
+        width: 180px;
+        opacity: 1;
       }
     }
   }
