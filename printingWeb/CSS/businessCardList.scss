@@ -17,8 +17,9 @@
     overflow: hidden;
     margin: 20px;
     @media all and (max-width: 480px) {
-      height: 275px;
+      padding-bottom: 30px;
     }
+
     .BCInfo {
       width: 100%;
       height: 30px;
@@ -69,6 +70,13 @@
     .BCDescription {
       font-size: 12px;
       margin: 15px 5%;
+    }
+  }
+  @media all and (max-width: 480px) {
+    .BCBox:nth-child(2) {
+      .BCH4 {
+        font-size: 18px;
+      }
     }
   }
 }
