@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.backGround {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url(./img/yellow.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.backGround .nav {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.backGround .nav .logo {
+  margin: 30px 0;
+  cursor: pointer;
+}
+
+.backGround .nav .user .navBtn {
+  width: 90px;
+  margin: 30px 0;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.backGround .nav .user .avatar {
+  width: 90px;
+}
+/*# sourceMappingURL=picChange.css.map */

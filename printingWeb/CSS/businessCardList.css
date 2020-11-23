@@ -24,6 +24,12 @@
   margin: 20px;
 }
 
+@media all and (max-width: 480px) {
+  .BCContent .BCBox {
+    height: 275px;
+  }
+}
+
 .BCContent .BCBox .BCInfo {
   width: 100%;
   height: 30px;
@@ -39,6 +45,12 @@
           align-items: center;
   color: #323232;
   font-weight: 700;
+}
+
+@media all and (max-width: 480px) {
+  .BCContent .BCBox .BCInfo {
+    height: 15px;
+  }
 }
 
 .BCContent .BCBox .BCH4 {
