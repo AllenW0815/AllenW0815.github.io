@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS5</title>
+    <link rel="stylesheet" href="./PS5.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="navBar">
+        <img src="img/logo.png" alt="No" class="logo" />
+        <nav>
+          <ul id="menuList">
+            <li><a href="">遊戲體驗</a></li>
+            <li><a href="">虛擬實境</a></li>
+            <li><a href="">關於我們</a></li>
+            <li><a href="">接洽聯絡</a></li>
+          </ul>
+        </nav>
+        <img src="img/menu.png" alt="No" class="menu" onclick="toggleMenu()" />
+      </div>
+
+      <div class="row">
+        <div class="col01">
+          <h2>PlayStation 5</h2>
+          <h3>made by ALNW</h3>
+          <p>
+            高速 SSD，實現疾如閃電的載入速度；<br />觸覺回饋、自適應扳機、3D
+            音效支援與所有難以置信的新一代 PlayStation遊戲，<br />讓玩家發掘更深刻、更身歷其境的遊戲體驗。
+          </p>
+          <h4>$3990 and RWD</h4>
+          <button>立即購買 <img src="img/arrow.png" alt="No" /></button>
+        </div>
+        <div class="col02">
+          <img src="img/ps5.png" alt="No" class="product" />
+          <div class="colorBox"></div>
+          <div class="addBtn">
+            <img src="img/add.png" alt="No" onclick="ALNWBoom()" />
+            <p>Click Me</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="socialLink">
+        <img src="img/fb.png" alt="No" />
+        <img src="img/ig.png" alt="No" />
+        <img src="img/tw.png" alt="No" />
+      </div>
+    </div>
+
+    <script>
+      let menuList = document.querySelector("#menuList");
+      let row = document.querySelector(".row");
+      let col01 = document.querySelector(".col01");
+      let col01_1 = document.querySelector(".col01-1");
+
+      //這一行是設定一開始的初始值 = 0 等於沒高度空白的
+      menuList.style.maxHeight = "0px";
+
+      function toggleMenu() {
+        if (menuList.style.maxHeight == "0px") {
+          menuList.style.maxHeight = "120px";
+        } else {
+          menuList.style.maxHeight = "0px";
+        }
+      }
+
+      //如果要用removeChild() 要先抓到父層才可以去移除他的子層DOM
+      function ALNWBoom() {
+        let ALNW = `<img src="img/ALNW-circle.png" alt="No" class="ALNW" />`;
+        let Hi = `<h2>你好</h2>`;
+
+        col01.setAttribute("class", "col01-1");
+        col01.innerHTML = ALNW + Hi;
+      }
+    </script>
+  </body>
+</html>

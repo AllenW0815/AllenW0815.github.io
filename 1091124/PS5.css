@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.content {
+  width: 100%;
+  padding: 0 8%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.content .navBar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.content .navBar .logo {
+  width: 50px;
+  cursor: pointer;
+  margin: 20px 0 0;
+}
+
+.content .navBar nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  margin: 20px 0 0;
+}
+
+.content .navBar nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.content .navBar nav ul li a {
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-weight: 700;
+}
+
+.content .navBar nav ul li a:hover {
+  text-decoration: none;
+  color: #ff5ea2;
+}
+
+.content .navBar nav ul li:last-child {
+  margin-right: 0;
+}
+
+.content .navBar .menu {
+  width: 30px;
+  cursor: pointer;
+  margin: 20px 0 0;
+  display: none;
+}
+
+.content .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .row .col01 {
+  margin-left: 50px;
+  position: relative;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  z-index: 2;
+}
+
+.content .row .col01 h2 {
+  font-size: 60px;
+}
+
+.content .row .col01 h3 {
+  font-size: 28px;
+  margin: 20px 0 10px;
+}
+
+.content .row .col01 p {
+  font-size: 16px;
+  color: #9c9c9c;
+  font-weight: 500;
+}
+
+.content .row .col01 h4 {
+  margin: 30px 0 10px;
+}
+
+.content .row .col01 button {
+  width: 120px;
+  border: none;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#fb5823), to(#ff3527));
+  background: linear-gradient(to right, #fb5823, #ff3527);
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.content .row .col01 button img {
+  width: 30px;
+  display: none;
+}
+
+.content .row .col01 button:hover img {
+  display: block;
+}
+
+.content .row .col01 button:hover {
+  width: 180px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.content .row .col01::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 15px;
+  height: 70%;
+  background: -webkit-gradient(linear, left top, right top, from(#fb5823), to(#ff3527));
+  background: linear-gradient(to right, #fb5823, #ff3527);
+}
+
+.content .row .col01-1 {
+  margin-left: 50px;
+  position: relative;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.content .row .col01-1::after {
+  content: none;
+}
+
+.content .row .col02 {
+  position: relative;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content .row .col02 .product {
+  width: 65%;
+}
+
+.content .row .col02 .colorBox {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 110%;
+  height: 50%;
+  background: -webkit-gradient(linear, left top, right top, from(#fb5823), to(#ff3527));
+  background: linear-gradient(to right, #fb5823, #ff3527);
+  border-radius: 30px 0 0 30px;
+  -webkit-transform: translateX(170px);
+          transform: translateX(170px);
+  z-index: -1;
+}
+
+.content .row .col02 .addBtn {
+  text-align: center;
+  cursor: pointer;
+}
+
+.content .row .col02 .addBtn img {
+  width: 40px;
+  margin-bottom: 5px;
+}
+
+.content .row .col02 .addBtn p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 9px;
+}
+
+.content .row .ALNW {
+  width: 60%;
+}
+
+.content .socialLink {
+  text-align: center;
+}
+
+.content .socialLink img {
+  height: 15px;
+  margin: 30px 20px 10px;
+}
+
+@media only screen and (max-width: 480px) {
+  .content .navBar {
+    margin-bottom: 80px;
+  }
+  .content .navBar nav ul {
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fb5823), to(rgba(255, 53, 39, 0.6)));
+    background: linear-gradient(#fb5823, rgba(255, 53, 39, 0.6));
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 3;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .content .navBar nav ul li {
+    display: block;
+    margin: 10px 30px 10px 0;
+  }
+  .content .navBar nav ul li a {
+    font-size: 12px;
+    color: #fff;
+  }
+  .content .navBar nav ul li:last-child {
+    margin: 10px 30px 10px 0;
+  }
+  .content .navBar .menu {
+    display: block;
+  }
+  .content .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    margin: 10px 0;
+  }
+  .content .row .col02 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .content .row .col02 .product {
+    width: 80%;
+    margin-left: 20px;
+  }
+  .content .row .col02 .colorBox {
+    -webkit-transform: translatex(50px);
+            transform: translatex(50px);
+  }
+  .content .row .col01 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .content .row .col01 h2 {
+    font-size: 36px;
+  }
+  .content .row .col01 h3 {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  .content .row .col01 p {
+    font-size: 12px;
+  }
+  .content .row .col01 h4 {
+    margin-top: 15px;
+  }
+  .content .socialLink {
+    margin-top: 80px;
+  }
+}
+/*# sourceMappingURL=PS5.css.map */

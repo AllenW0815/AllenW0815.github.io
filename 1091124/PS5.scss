@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.content {
+  width: 100%;
+  // height: 100vh;
+  padding: 0 8%;
+  //要下box-sizing: border-box才不會爆版
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  .navBar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .logo {
+      width: 50px;
+      cursor: pointer;
+      margin: 20px 0 0;
+    }
+    nav {
+      flex: 1;
+      text-align: right;
+      margin: 20px 0 0;
+      ul {
+        li {
+          list-style: none;
+          display: inline-block;
+          margin-right: 30px;
+          a {
+            text-decoration: none;
+            color: #000;
+            transition: 0.2s;
+            font-weight: 700;
+          }
+          a:hover {
+            text-decoration: none;
+            color: #ff5ea2;
+          }
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .menu {
+      width: 30px;
+      cursor: pointer;
+      margin: 20px 0 0;
+      display: none;
+    }
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .col01 {
+      margin-left: 50px;
+      position: relative;
+      flex-basis: 40%;
+      z-index: 2;
+      h2 {
+        font-size: 60px;
+      }
+      h3 {
+        font-size: 28px;
+        margin: 20px 0 10px;
+      }
+      p {
+        font-size: 16px;
+        color: #9c9c9c;
+        font-weight: 500;
+      }
+      h4 {
+        margin: 30px 0 10px;
+      }
+      button {
+        width: 120px;
+        border: none;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background: linear-gradient(to right, #fb5823, #ff3527);
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.5s;
+        img {
+          width: 30px;
+          //一開始先不顯示
+          display: none;
+        }
+      }
+      button:hover img {
+        display: block;
+      }
+      button:hover {
+        width: 180px;
+        justify-content: space-around;
+      }
+    }
+    .col01::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -40px;
+      width: 15px;
+      height: 70%;
+      background: linear-gradient(to right, #fb5823, #ff3527);
+    }
+    //.col01-1 最主要是用來移除偽元素 透過setAttribute去改變class時觸發
+    .col01-1 {
+      margin-left: 50px;
+      position: relative;
+      flex-basis: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+    .col01-1::after {
+      content: none;
+    }
+    .col02 {
+      position: relative;
+      flex-basis: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .product {
+        width: 65%;
+      }
+      .colorBox {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 110%;
+        height: 50%;
+        background: linear-gradient(to right, #fb5823, #ff3527);
+        border-radius: 30px 0 0 30px;
+        transform: translateX(170px);
+        z-index: -1;
+      }
+      .addBtn {
+        text-align: center;
+        cursor: pointer;
+        img {
+          width: 40px;
+          margin-bottom: 5px;
+        }
+        p {
+          color: #fff;
+          font-weight: 700;
+          font-size: 9px;
+        }
+      }
+    }
+    .ALNW {
+      width: 60%;
+    }
+  }
+  .socialLink {
+    text-align: center;
+    img {
+      height: 15px;
+      margin: 30px 20px 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .content {
+    .navBar {
+      margin-bottom: 80px;
+      nav {
+        ul {
+          width: 100%;
+          background: linear-gradient(
+            rgba(251, 88, 35, 1),
+            rgba(255, 53, 39, 0.6)
+          );
+          position: absolute;
+          top: 75px;
+          right: 0;
+          z-index: 3;
+          transition: 0.5s;
+          // overflow: hidden;
+          li {
+            display: block;
+            margin: 10px 30px 10px 0;
+            a {
+              font-size: 12px;
+              color: #fff;
+            }
+          }
+          li:last-child {
+            margin: 10px 30px 10px 0;
+          }
+        }
+      }
+      .menu {
+        display: block;
+      }
+    }
+    .row {
+      flex-direction: column-reverse;
+      margin: 10px 0;
+      .col02 {
+        flex-basis: 100%;
+        .product {
+          width: 80%;
+          margin-left: 20px;
+        }
+        .colorBox {
+          transform: translatex(50px);
+        }
+      }
+      .col01 {
+        flex-basis: 100%;
+        h2 {
+          font-size: 36px;
+        }
+        h3 {
+          font-size: 18px;
+          margin-top: 5px;
+        }
+        p {
+          font-size: 12px;
+        }
+        h4 {
+          margin-top: 15px;
+        }
+      }
+    }
+    .socialLink {
+      margin-top: 80px;
+    }
+  }
+}
