@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  padding: 100px;
+  header {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      font-size: 28px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
+    .toggle {
+      .fas {
+        font-size: 28px;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rgb(212, 55, 55);
+    width: calc(100% - 200px);
+    height: calc(100% - 200px);
+    position: absolute;
+    overflow: hidden;
+    z-index: 8;
+    .box {
+      position: relative;
+      width: 24%;
+      margin: 0px 0.5%;
+      height: 100%;
+      /*   也可以用此方式做分隔
+        border-right: 10px solid #000; */
+      .imgBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: 0.5s;
+        z-index: 9;
+        //轉成灰階
+        opacity: 0.5;
+        filter: grayscale(1);
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .imgBox:hover {
+        opacity: 1;
+        filter: grayscale(0);
+      }
+      .active {
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        width: calc(100% - 200px);
+        height: calc(100% - 200px);
+        z-index: 10;
+        filter: grayscale(1);
+        opacity: 1;
+      }
+    }
+  }
+  footer {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px 80px;
+    display: flex;
+    ul {
+      display: flex;
+      align-items: center;
+      li {
+        margin-right: 20px;
+        list-style: none;
+        a {
+          color: #555;
+          font-weight: 700;
+          text-decoration: none;
+          letter-spacing: 1px;
+          transition: 0.3s;
+        }
+        a:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

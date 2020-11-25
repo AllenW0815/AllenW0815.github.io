@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01</title>
+    <link rel="stylesheet" href="01.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+      integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section>
+      <header>
+        <a href="#" class="logo">ALNW</a>
+        <div class="toggle"><i class="fas fa-ellipsis-h"></i></div>
+      </header>
+      <div class="content">
+        <div class="box">
+          <div class="imgBox"><img src="img/01.jpg" alt="" /></div>
+        </div>
+        <div class="box">
+          <div class="imgBox"><img src="img/02.jpg" alt="" /></div>
+        </div>
+        <div class="box">
+          <div class="imgBox"><img src="img/03.jpg" alt="" /></div>
+        </div>
+        <div class="box">
+          <div class="imgBox"><img src="img/04.jpg" alt="" /></div>
+        </div>
+      </div>
+      <footer>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Line</a></li>
+        </ul>
+      </footer>
+    </section>
+
+    <script>
+      let imgBox = document.querySelectorAll(".imgBox");
+      /* 
+    querySelectorAll 回傳一個nodeList
+    然候用forEach對當中每一個物件加上事件監聽
+    點擊的時候會切換active這個class
+    */
+
+      imgBox.forEach((e) =>
+        e.addEventListener("click", () => e.classList.toggle("active"))
+      );
+    </script>
+  </body>
+</html>
