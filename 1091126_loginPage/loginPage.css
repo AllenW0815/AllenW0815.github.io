@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container .formContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container .formContainer .signInSignOut {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  z-index: 5;
+  -webkit-transition: 1s 0.7s ease-in-out;
+  transition: 1s 0.7s ease-in-out;
+}
+
+.container .formContainer .signInSignOut form {
+  padding: 0 5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -webkit-transition: 0.7s 0.6s ease-in-out;
+  transition: 0.7s 0.6s ease-in-out;
+}
+
+.container .formContainer .signInSignOut form h2 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.container .formContainer .signInSignOut form .inputField {
+  background-color: #e2e2e2;
+  max-width: 380px;
+  width: 100%;
+  height: 60px;
+  margin: 10px 0;
+  border-radius: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 85%;
+      grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+}
+
+.container .formContainer .signInSignOut form .inputField i {
+  text-align: center;
+  line-height: 60px;
+  color: #acacac;
+  font-size: 1.1rem;
+}
+
+.container .formContainer .signInSignOut form .inputField input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #333;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.container .formContainer .signInSignOut form .inputField input::-webkit-input-placeholder {
+  color: #acacac;
+  letter-spacing: 0;
+}
+
+.container .formContainer .signInSignOut form .inputField input:-ms-input-placeholder {
+  color: #acacac;
+  letter-spacing: 0;
+}
+
+.container .formContainer .signInSignOut form .inputField input::-ms-input-placeholder {
+  color: #acacac;
+  letter-spacing: 0;
+}
+
+.container .formContainer .signInSignOut form .inputField input::placeholder {
+  color: #acacac;
+  letter-spacing: 0;
+}
+
+.container .formContainer .signInSignOut form .btn {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #5995fd;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 10px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container .formContainer .signInSignOut form .btn:hover {
+  background-color: #4d84e2;
+}
+
+.container .formContainer .signInSignOut form .socialText {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+
+.container .formContainer .signInSignOut form .socialMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .formContainer .signInSignOut form .socialMedia .socialIcon {
+  height: 46px;
+  width: 46px;
+  border: 1px solid #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0.45rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 50%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container .formContainer .signInSignOut form .socialMedia .socialIcon:hover {
+  color: #4481eb;
+  border-color: #4481eb;
+}
+
+.container .formContainer .signInSignOut .SignIn {
+  z-index: 2;
+  opacity: 1;
+}
+
+.container .formContainer .signInSignOut .SignUp {
+  z-index: 1;
+  opacity: 0;
+}
+
+.container .panelContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  pointer-events: none;
+}
+
+.container .panelContainer .panel {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  pointer-events: none;
+  z-index: 7;
+}
+
+.container .panelContainer .panel .content {
+  color: #fff;
+  -webkit-transition: 0.9s 0.6s ease-in-out;
+  transition: 0.9s 0.6s ease-in-out;
+}
+
+.container .panelContainer .panel .content h3 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+.container .panelContainer .panel .content p {
+  padding: 15px 50px;
+}
+
+.container .panelContainer .panel .content .btn {
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #5995fd;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 10px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container .panelContainer .panel .content .btn:focus {
+  outline: none;
+}
+
+.container .panelContainer .panel .content .transparent {
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 130px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.container .panelContainer .panel img {
+  width: 60%;
+  -webkit-transition: 1.1s 0.4s ease-in-out;
+  transition: 1.1s 0.4s ease-in-out;
+}
+
+.container .panelContainer .leftPanel {
+  padding: 3rem 17% 2rem 12%;
+  pointer-events: all;
+}
+
+.container .panelContainer .leftPanel img {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.container .panelContainer .rightPanel {
+  padding: 3rem 12% 2rem 17%;
+  pointer-events: none;
+}
+
+.container .panelContainer .rightPanel .content {
+  -webkit-transform: translateX(800px);
+          transform: translateX(800px);
+  -webkit-transition: 0.9s 0.6s ease-in-out;
+  transition: 0.9s 0.6s ease-in-out;
+}
+
+.container .panelContainer .rightPanel img {
+  -webkit-transform: translateX(800px);
+          transform: translateX(800px);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: 48%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, #4481eb, #04befe);
+  z-index: 6;
+  -webkit-transition: 1.8s ease-in-out;
+  transition: 1.8s ease-in-out;
+}
+
+/*animation*/
+.container.sign-up-mode::before {
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+  right: 52%;
+}
+
+.container.sign-up-mode .leftPanel img,
+.container.sign-up-mode .leftPanel .content {
+  -webkit-transform: translate(-800px);
+          transform: translate(-800px);
+}
+
+.container.sign-up-mode .rightPanel img,
+.container.sign-up-mode .rightPanel .content {
+  -webkit-transform: translate(0px);
+          transform: translate(0px);
+}
+
+.container.sign-up-mode .leftPanel {
+  pointer-events: none;
+}
+
+.container.sign-up-mode .rightPanel {
+  pointer-events: all;
+}
+
+.container.sign-up-mode .signInSignOut {
+  left: 25%;
+}
+
+.container.sign-up-mode .formContainer .signInSignOut .SignIn {
+  z-index: 1;
+  opacity: 0;
+}
+
+.container.sign-up-mode .formContainer .signInSignOut .SignUp {
+  z-index: 2;
+  opacity: 1;
+}
+
+/*RWD*/
+/*# sourceMappingURL=loginPage.css.map */

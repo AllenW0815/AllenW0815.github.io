@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  // background-color: #cca;
+  overflow: hidden;
+  .formContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .signInSignOut {
+      position: absolute;
+      top: 50%;
+      left: 75%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      display: grid;
+      //???
+      grid-template-columns: 1fr;
+      z-index: 5;
+      transition: 1s 0.7s ease-in-out;
+
+      form {
+        padding: 0 5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        //??? 把兩個form 疊起來
+        grid-column: 1/2;
+        grid-row: 1/2;
+        transition: 0.7s 0.6s ease-in-out;
+        h2 {
+          font-size: 2.2rem;
+          color: #222;
+          margin-bottom: 10px;
+        }
+        .inputField {
+          background-color: rgb(226, 226, 226);
+          max-width: 380px;
+          width: 100%;
+          height: 60px;
+          margin: 10px 0;
+          border-radius: 60px;
+          //讓子層照比例占位
+          display: grid;
+          grid-template-columns: 15% 85%;
+          padding: 0 0.4rem;
+          i {
+            text-align: center;
+            line-height: 60px;
+            color: #acacac;
+            font-size: 1.1rem;
+          }
+          input {
+            background: none;
+            border: none;
+            outline: none;
+            color: #333;
+            font-weight: 600;
+            line-height: 1;
+            font-size: 1rem;
+            letter-spacing: 2px;
+          }
+          input::placeholder {
+            color: #acacac;
+            letter-spacing: 0;
+          }
+        }
+        .btn {
+          width: 150px;
+          height: 50px;
+          border: none;
+          border-radius: 60px;
+          cursor: pointer;
+          color: #fff;
+          background-color: #5995fd;
+          text-transform: uppercase;
+          font-weight: 900;
+          margin: 10px 0;
+          transition: 0.4s;
+        }
+        .btn:hover {
+          background-color: #4d84e2;
+        }
+        .socialText {
+          padding: 0.7rem 0;
+          font-size: 1rem;
+        }
+        .socialMedia {
+          display: flex;
+          justify-content: center;
+          .socialIcon {
+            height: 46px;
+            width: 46px;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0.45rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #333;
+            border-radius: 50%;
+            transition: 0.3s;
+          }
+          .socialIcon:hover {
+            color: #4481eb;
+            border-color: #4481eb;
+          }
+        }
+      }
+      .SignIn {
+        z-index: 2;
+        opacity: 1;
+      }
+      .SignUp {
+        z-index: 1;
+        opacity: 0;
+      }
+    }
+  }
+  .panelContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    // background-color: green;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    pointer-events: none;
+    .panel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-around;
+      pointer-events: none;
+      z-index: 7;
+      .content {
+        color: #fff;
+        transition: 0.9s 0.6s ease-in-out;
+        h3 {
+          font-weight: 600;
+          line-height: 1;
+          font-size: 1.5rem;
+        }
+        p {
+          padding: 15px 50px;
+        }
+        .btn {
+          width: 150px;
+          height: 50px;
+          border: none;
+          border-radius: 60px;
+          cursor: pointer;
+          color: #fff;
+          background-color: #5995fd;
+          text-transform: uppercase;
+          font-weight: 900;
+          margin: 10px 0;
+          transition: 0.4s;
+        }
+        .btn:focus {
+          outline: none;
+        }
+        .transparent {
+          margin: 0;
+          background: none;
+          border: 2px solid #fff;
+          width: 130px;
+          height: 40px;
+          font-weight: 600;
+          font-size: 0.8rem;
+        }
+      }
+      img {
+        width: 60%;
+        transition: 1.1s 0.4s ease-in-out;
+      }
+    }
+    .leftPanel {
+      padding: 3rem 17% 2rem 12%;
+      pointer-events: all;
+      img {
+        transform: translateX(0px);
+      }
+    }
+    .rightPanel {
+      padding: 3rem 12% 2rem 17%;
+      pointer-events: none;
+      .content {
+        transform: translateX(800px);
+        transition: 0.9s 0.6s ease-in-out;
+      }
+      img {
+        transform: translateX(800px);
+      }
+    }
+  }
+}
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, #4481eb, #04befe);
+  z-index: 6;
+  transition: 1.8s ease-in-out;
+}
+
+/*animation*/
+.container.sign-up-mode::before {
+  transform: translate(100%, -50%);
+  right: 52%;
+}
+.container.sign-up-mode .leftPanel img,
+.container.sign-up-mode .leftPanel .content {
+  transform: translate(-800px);
+}
+.container.sign-up-mode .rightPanel img,
+.container.sign-up-mode .rightPanel .content {
+  transform: translate(0px);
+}
+
+.container.sign-up-mode .leftPanel {
+  pointer-events: none;
+}
+.container.sign-up-mode .rightPanel {
+  pointer-events: all;
+}
+.container.sign-up-mode .signInSignOut {
+  left: 25%;
+}
+
+.container.sign-up-mode .formContainer .signInSignOut .SignIn {
+  z-index: 1;
+  opacity: 0;
+}
+.container.sign-up-mode .formContainer .signInSignOut .SignUp {
+  z-index: 2;
+  opacity: 1;
+}
+
+/*RWD*/

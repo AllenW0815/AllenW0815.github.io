@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login Page</title>
+    <link rel="stylesheet" href="loginPage.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+      integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="formContainer">
+        <div class="signInSignOut">
+          <form action="" class="SignIn">
+            <h2>登入</h2>
+            <div class="inputField">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="User name" />
+            </div>
+            <div class="inputField">
+              <i class="fas fa-unlock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="登入" class="btn" />
+
+            <p class="socialText">or Sign in with social platforms</p>
+            <div class="socialMedia">
+              <a href="#" class="socialIcon"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="socialIcon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="socialIcon"><i class="fab fa-google"></i></a>
+              <a href="#" class="socialIcon"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </form>
+          <form action="" class="SignUp">
+            <h2>註冊</h2>
+            <div class="inputField">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="User name" />
+            </div>
+            <div class="inputField">
+              <i class="fas fa-envelope"></i>
+              <input type="text" placeholder="Email" />
+            </div>
+            <div class="inputField">
+              <i class="fas fa-unlock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="註冊" class="btn" />
+
+            <p class="socialText">Sign up with social platforms</p>
+            <div class="socialMedia">
+              <a href="#" class="socialIcon"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="socialIcon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="socialIcon"><i class="fab fa-google"></i></a>
+              <a href="#" class="socialIcon"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="panelContainer">
+        <div class="panel leftPanel">
+          <div class="content">
+            <h3>第一次來這邊嗎?</h3>
+            <p>
+              切換登入以及註冊狀態，animation轉場，有RWD敬請進入開發者工具，Ctrl+Shift+M檢視效果。點擊下方按鈕看看轉場吧!
+            </p>
+            <button class="btn transparent" id="Sign-up-btn">註冊</button>
+          </div>
+          <img src="img/login-01.png" alt="No" />
+        </div>
+        <div class="panel rightPanel">
+          <div class="content">
+            <h3>已經註冊過了嗎?</h3>
+            <p>
+              切換登入以及註冊狀態，animation轉場，有RWD敬請進入開發者工具，Ctrl+Shift+M檢視效果。點擊下方按鈕看看轉場吧!
+            </p>
+            <button class="btn transparent" id="Sign-in-btn">登入</button>
+          </div>
+          <img src="img/login-02.png" alt="No" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let SignUpBtn = document.querySelector("#Sign-up-btn");
+      let SignInBtn = document.querySelector("#Sign-in-btn");
+      let container = document.querySelector(".container");
+
+      SignUpBtn.addEventListener("click", (e) => {
+        container.classList.add("sign-up-mode");
+      });
+      SignInBtn.addEventListener("click", (e) => {
+        container.classList.remove("sign-up-mode");
+      });
+    </script>
+  </body>
+</html>
