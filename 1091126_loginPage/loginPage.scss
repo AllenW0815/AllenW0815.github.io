@@ -162,7 +162,7 @@ body {
           font-size: 1.5rem;
         }
         p {
-          padding: 15px 50px;
+          padding: 15px 20px;
         }
         .btn {
           width: 150px;
@@ -262,4 +262,151 @@ body {
   opacity: 1;
 }
 
-/*RWD*/
+/*RWD*/ /*有點搞混掉了*/
+@media (max-width: 870px) {
+  .container {
+    min-height: 800px;
+    height: 100vh;
+  }
+  .container::before {
+    width: 1200px;
+    height: 1200px;
+    top: initial;
+    right: initial;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 65%;
+    z-index: -5;
+    transition: 2s ease-in-out;
+  }
+  .container.sign-up-mode::before {
+    top: initial;
+    right: initial;
+    transform: translate(-50%, 100%);
+    left: 50%;
+    bottom: 35%;
+  }
+  .container .formContainer .signInSignOut {
+    width: 100%;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -100%);
+  }
+  .container .panelContainer {
+    // background-color: #cac;
+    z-index: 10;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+  .container .panelContainer .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 8%;
+  }
+  .container .panelContainer .rightPanel img,
+  .container .panelContainer .rightPanel .content {
+    transform: translateY(300px);
+  }
+  .container.sign-up-mode .panelContainer .rightPanel img,
+  .container.sign-up-mode .panelContainer .rightPanel .content {
+    transform: translateY(0px);
+  }
+  .container .panelContainer .panel img {
+    width: 70%;
+  }
+  .container .panelContainer .leftPanel {
+    grid-row: 1/2;
+  }
+  .container .panelContainer .rightPanel {
+    grid-row: 3/4;
+  }
+  /*表格部分*/
+  .container.sign-up-mode .signInSignOut {
+    transform: translate(-50%, -50%);
+    top: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    min-height: 300px;
+    height: 100vh;
+  }
+  .container::before {
+    width: 480px;
+    height: 480px;
+    top: initial;
+    right: initial;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 70%;
+    z-index: -5;
+    transition: 2s ease-in-out;
+  }
+  .container .formContainer .signInSignOut {
+    width: 100%;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -100%);
+  }
+  .container .formContainer .signInSignOut form {
+    padding: 2rem;
+    .inputField {
+      background-color: rgb(226, 226, 226);
+      max-width: 380px;
+      width: 90%;
+      height: 45px;
+      margin: 5px 0;
+      line-height: 10px;
+      border-radius: 60px;
+      //讓子層照比例占位
+      display: grid;
+      grid-template-columns: 15% 85%;
+      padding: 0 0.4rem;
+      i {
+        height: 45px;
+        line-height: 45px;
+      }
+      input {
+        height: 45px;
+      }
+      input::placeholder {
+        color: #acacac;
+        letter-spacing: 0;
+      }
+    }
+  }
+  .container .panelContainer {
+    z-index: 10;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+  .container .panelContainer .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 8%;
+    font-size: 12px;
+  }
+  .container .panelContainer .rightPanel .content {
+    transform: translateY(300px);
+  }
+  .container.sign-up-mode .panelContainer .rightPanel .content {
+    transform: translateY(0px);
+  }
+  .container .panelContainer .panel img {
+    display: none;
+  }
+  .container .panelContainer .leftPanel {
+    grid-row: 1/2;
+  }
+  .container .panelContainer .rightPanel {
+    grid-row: 3/4;
+  }
+  /*表格部分*/
+  .container.sign-up-mode .signInSignOut {
+    transform: translate(-50%, -50%);
+    top: 35%;
+  }
+}

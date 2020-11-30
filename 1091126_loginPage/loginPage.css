@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -240,7 +241,7 @@ body {
 }
 
 .container .panelContainer .panel .content p {
-  padding: 15px 50px;
+  padding: 15px 20px;
 }
 
 .container .panelContainer .panel .content .btn {
@@ -363,4 +364,201 @@ body {
 }
 
 /*RWD*/
+/*有點搞混掉了*/
+@media (max-width: 870px) {
+  .container {
+    min-height: 800px;
+    height: 100vh;
+  }
+  .container::before {
+    width: 1200px;
+    height: 1200px;
+    top: initial;
+    right: initial;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    left: 50%;
+    bottom: 65%;
+    z-index: -5;
+    -webkit-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+  }
+  .container.sign-up-mode::before {
+    top: initial;
+    right: initial;
+    -webkit-transform: translate(-50%, 100%);
+            transform: translate(-50%, 100%);
+    left: 50%;
+    bottom: 35%;
+  }
+  .container .formContainer .signInSignOut {
+    width: 100%;
+    left: 50%;
+    top: 90%;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+  .container .panelContainer {
+    z-index: 10;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+  }
+  .container .panelContainer .panel {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem 8%;
+  }
+  .container .panelContainer .rightPanel img,
+  .container .panelContainer .rightPanel .content {
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+  }
+  .container.sign-up-mode .panelContainer .rightPanel img,
+  .container.sign-up-mode .panelContainer .rightPanel .content {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  .container .panelContainer .panel img {
+    width: 70%;
+  }
+  .container .panelContainer .leftPanel {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .container .panelContainer .rightPanel {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+  /*表格部分*/
+  .container.sign-up-mode .signInSignOut {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    top: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    min-height: 300px;
+    height: 100vh;
+  }
+  .container::before {
+    width: 480px;
+    height: 480px;
+    top: initial;
+    right: initial;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    left: 50%;
+    bottom: 70%;
+    z-index: -5;
+    -webkit-transition: 2s ease-in-out;
+    transition: 2s ease-in-out;
+  }
+  .container .formContainer .signInSignOut {
+    width: 100%;
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+  .container .formContainer .signInSignOut form {
+    padding: 2rem;
+  }
+  .container .formContainer .signInSignOut form .inputField {
+    background-color: #e2e2e2;
+    max-width: 380px;
+    width: 90%;
+    height: 45px;
+    margin: 5px 0;
+    line-height: 10px;
+    border-radius: 60px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 15% 85%;
+        grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+  }
+  .container .formContainer .signInSignOut form .inputField i {
+    height: 45px;
+    line-height: 45px;
+  }
+  .container .formContainer .signInSignOut form .inputField input {
+    height: 45px;
+  }
+  .container .formContainer .signInSignOut form .inputField input::-webkit-input-placeholder {
+    color: #acacac;
+    letter-spacing: 0;
+  }
+  .container .formContainer .signInSignOut form .inputField input:-ms-input-placeholder {
+    color: #acacac;
+    letter-spacing: 0;
+  }
+  .container .formContainer .signInSignOut form .inputField input::-ms-input-placeholder {
+    color: #acacac;
+    letter-spacing: 0;
+  }
+  .container .formContainer .signInSignOut form .inputField input::placeholder {
+    color: #acacac;
+    letter-spacing: 0;
+  }
+  .container .panelContainer {
+    z-index: 10;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+  }
+  .container .panelContainer .panel {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1rem 8%;
+    font-size: 12px;
+  }
+  .container .panelContainer .rightPanel .content {
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+  }
+  .container.sign-up-mode .panelContainer .rightPanel .content {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  .container .panelContainer .panel img {
+    display: none;
+  }
+  .container .panelContainer .leftPanel {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .container .panelContainer .rightPanel {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+  }
+  /*表格部分*/
+  .container.sign-up-mode .signInSignOut {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    top: 35%;
+  }
+}
 /*# sourceMappingURL=loginPage.css.map */
