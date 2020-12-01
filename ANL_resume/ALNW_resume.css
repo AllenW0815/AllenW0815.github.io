@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif TC", serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*數字越小代表距離螢幕越近，透視感越強烈*/
+  perspective: 1200px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.container {
+  /*可以打開背景色看觸發mousemove的範圍*/
+  /* background-color: lightblue; */
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  min-height: 80vh;
+  width: 30rem;
+  /* background-color: lightcoral; */
+  box-shadow: 0 10px 20px rgba(0, 20, 0, 0.1), 0 15px 30px rgba(0, 30, 0, 0.1);
+  border-radius: 3rem;
+  padding: 1rem 4rem;
+  transform-style: preserve-3d;
+}
+.avatar {
+  /* background-color: lightcoral; */
+  /* height: 35vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.6s;
+}
+.circle {
+  border-radius: 50%;
+  cursor: pointer;
+}
+.circle img {
+  width: 20rem;
+}
+
+/*info part*/
+.info .title {
+  font-size: 1.5rem;
+  transition: 0.6s;
+}
+.info h3 {
+  font-size: 1rem;
+  padding: 0.3rem 0;
+  font-weight: 400;
+  color: #696969;
+  transition: 0.6s;
+}
+.link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1.5rem 0;
+  transition: 0.6s;
+}
+.link button {
+  padding: 0.2rem 0.8rem;
+  background: none;
+  border: none;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  color: #696969;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 0.8rem;
+  transition: 0.5s;
+}
+.link button:hover {
+  transform: scale(1.2);
+}
+
+button.active {
+  background-color: #696969;
+  color: #fff;
+}
+
+.hire {
+  margin-top: 3.5rem;
+  transition: 0.6s;
+}
+.hire button {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  color: #fff;
+  background: rgb(136, 201, 117);
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1.3rem;
+  transition: 0.6s;
+}
+.hire button:hover {
+  background: rgb(124, 175, 108);
+}
