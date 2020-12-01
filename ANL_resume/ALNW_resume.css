@@ -26,7 +26,7 @@ a {
 .container {
   /*可以打開背景色看觸發mousemove的範圍*/
   /* background-color: lightblue; */
-  width: 30%;
+  width: 35%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.6s;
+  transition: 0.8s ease;
 }
 .circle {
   border-radius: 50%;
@@ -85,7 +85,7 @@ a {
   cursor: pointer;
   font-weight: 900;
   font-size: 0.8rem;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 .link button:hover {
   transform: scale(1.2);
@@ -114,4 +114,19 @@ a {
 }
 .hire button:hover {
   background: rgb(124, 175, 108);
+}
+
+/*滑鼠圈圈*/
+#pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  background: rgb(136, 201, 117);
+  border-radius: 50%;
+  opacity: 0.4;
+  transition: 0.15s ease-out;
 }
