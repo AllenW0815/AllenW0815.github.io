@@ -18,6 +18,11 @@ button:focus {
   outline: none;
 }
 
+a {
+  text-decoration: none;
+  color: #696969;
+}
+
 .container {
   /*可以打開背景色看觸發mousemove的範圍*/
   /* background-color: lightblue; */
@@ -72,12 +77,11 @@ button:focus {
   transition: 0.6s;
 }
 .link button {
-  padding: 0.2rem 0.8rem;
+  padding: 0.2rem 0.5rem;
   background: none;
   border: none;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
   border-radius: 30px;
-  color: #696969;
   cursor: pointer;
   font-weight: 900;
   font-size: 0.8rem;
@@ -87,10 +91,10 @@ button:focus {
   transform: scale(1.2);
 }
 
-button.active {
+/* button.active {
   background-color: #696969;
   color: #fff;
-}
+} */
 
 .hire {
   margin-top: 3.5rem;

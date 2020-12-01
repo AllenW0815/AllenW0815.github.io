@@ -46,7 +46,7 @@ container.addEventListener('mouseleave',(e)=>{
     hire.style.transform = `translateZ(0px)`
 })
 
-//換墨鏡
+//測試
 avatar.addEventListener('click',(e)=>{
     console.log('hi');
 })
