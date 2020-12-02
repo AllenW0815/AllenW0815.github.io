@@ -39,6 +39,7 @@ a {
   border-radius: 3rem;
   padding: 1rem 4rem;
   transform-style: preserve-3d;
+  transition: 0.6s;
 }
 .avatar {
   /* background-color: lightcoral; */
@@ -129,4 +130,26 @@ a {
   border-radius: 50%;
   opacity: 0.4;
   transition: 0.15s ease-out;
+}
+
+/*水波紋*/
+span {
+  position: absolute;
+  animation: ripple 1.2s linear infinite;
+  border-radius: 50%;
+  background-color: rgb(223, 241, 224);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ripple {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.7;
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
 }

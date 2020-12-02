@@ -9,6 +9,8 @@ const link = document.querySelector('.link')
 const hire = document.querySelector('.hire')
     //滑鼠圈圈用
 const pointer = document.querySelector('#pointer')
+    //水波紋用
+const body = document.querySelector('body')
 
 //加掛事件監聽
 container.addEventListener('mousemove',(e)=>{
@@ -63,9 +65,24 @@ hire.addEventListener('click',(e)=>{
 
 //滑鼠圈圈
 window.addEventListener('mousemove',(e)=>{
-    console.log('e.pageX='+e.pageX,'e.pageY='+e.pageY);
+    // console.log('e.pageX='+e.pageX,'e.pageY='+e.pageY);
     //圈圈尺寸20*20
     let circleX=e.pageX-10
     let circleY=e.pageY-10
     pointer.style.transform = `translate(${circleX}px,${circleY}px)`
+})
+
+//水波紋
+window.addEventListener('click',(e)=>{
+    let x = e.clientX
+    let y = e.clientY
+    let ripples = document.createElement("span")
+
+    ripples.style.left = x + "px";
+    ripples.style.top = y + "px";
+    body.appendChild(ripples);
+    //讓span消失
+    setTimeout(()=>{
+        ripples.remove();
+    },1200)
 })
