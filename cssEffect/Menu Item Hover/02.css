@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #080b1f;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  list-style: none;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+ul li::before {
+  content: attr(data-text);
+  position: absolute; /*依父層定位在後方*/
+  /*將要後顯的文字集中到中間位置*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 900;
+  font-size: 240px;
+  opacity: 0;
+  pointer-events: none; /*不影響到滑鼠指定*/
+  transition: 0.5s;
+  letter-spacing: 5px;
+}
+
+ul li:hover::before {
+  opacity: 0.05;
+}
+
+ul li a {
+  position: relative; /*不下的話左方有奇怪東西出現*/
+  display: inline-block; /*要下才能吃到hover的scale效果*/
+  text-decoration: none;
+  padding: 5px 15px;
+  color: #fff;
+  transition: 0.3s;
+  /* z-index: 1; */
+  background-color: rgb(43, 218, 241);
+  overflow: hidden;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+ul:hover li a {
+  opacity: 0; /*hover到ul時變不見*/
+}
+ul li a:hover {
+  background-color: #ff3f81;
+  transform: scale(1.8);
+  z-index: 2;
+  opacity: 1; /*hover到a的時候顯示*/
+}
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100px; /*起始位置*/
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  transform: skewX(40deg);
+}
+
+ul li a:hover::before {
+  left: 170px; /*終點位置*/
+  transition: 0.8s;
+  transition-delay: 0.1s;
+}

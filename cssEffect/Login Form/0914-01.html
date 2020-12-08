@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./01.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h2>Login</h2>
+      <form action="">
+        <div class="inputBox">
+          <input type="text" required="" />
+          <label for="">會員名稱</label>
+        </div>
+        <div class="inputBox">
+          <input type="password" required="" />
+          <label for="">密碼</label>
+        </div>
+        <input type="submit" value="登入" />
+        <div class="remove">一鍵清除</div>
+      </form>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".remove").click(function () {
+        $(".inputBox input").val("");
+      });
+    </script>
+  </body>
+</html>

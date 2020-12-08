@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./01.css" />
+  </head>
+  <body>
+    <nav>
+      <div id="maker"></div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Service</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Team</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <script>
+      var maker = document.querySelector("#maker");
+      var item = document.querySelectorAll("nav a");
+
+      function indicator(e) {
+        //e是指什麼?
+        maker.style.left = e.offsetLeft + "px";
+        maker.style.width = e.offsetWidth + "px";
+      }
+
+      item.forEach((link) => {
+        //forEach((link) 寫法解釋?
+        link.addEventListener("click", (e) => {
+          indicator(e.target);
+        });
+      });
+    </script>
+  </body>
+</html>
