@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Clock.css" />
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand second-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand hour-hand"></div>
+      </div>
+    </div>
+
+    <script>
+      const second = document.querySelector(".second-hand");
+      const minute = document.querySelector(".minute-hand");
+      const hour = document.querySelector(".hour-hand");
+      let secondDeg = -90;
+      let minuteDeg = -90;
+      let hourDeg = -90;
+      function setSecondHand() {
+        second.style.transform = `rotate(${secondDeg}deg)`;
+        secondDeg += 6;
+      }
+      function setMinuteHand() {
+        minute.style.transform = `rotate(${minuteDeg}deg)`;
+        minuteDeg += 6;
+      }
+      function setHourHand() {
+        hour.style.transform = `rotate(${hourDeg}deg)`;
+        hourDeg += 30;
+      }
+
+      setInterval(setSecondHand, 1000);
+      setInterval(setMinuteHand, 2500);
+      setInterval(setHourHand, 3800);
+
+      //整體思路
+      //此版本沒有對應到實際的世界時間
+      /*
+      先抓出3個要控制的指針DOM
+      設定起始的角度位置，分別為每多少毫秒後選轉多少角度
+      用setInterval執行不間斷有間隔的動作
+        */
+    </script>
+  </body>
+</html>

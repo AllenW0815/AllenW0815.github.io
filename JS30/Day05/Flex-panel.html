@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOG DOG AMY</title>
+    <link rel="stylesheet" href="Flex-panel.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="panels">
+      <div class="panel panel1">
+        <p>去日本送機那天</p>
+        <p>狗</p>
+        <p>2017.03</p>
+      </div>
+      <div class="panel panel2">
+        <p>去百貨公司特賣會</p>
+        <p>咪</p>
+        <p>2018.06</p>
+      </div>
+      <div class="panel panel3">
+        <p>去台中一個樹林裡</p>
+        <p>遛</p>
+        <p>2017.07</p>
+      </div>
+      <div class="panel panel4">
+        <p>吃五之神拉麵</p>
+        <p>狗</p>
+        <p>2017.10</p>
+      </div>
+      <div class="panel panel5">
+        <p>跟宜航吃飯前的頂呱呱</p>
+        <p>生</p>
+        <p>2017.07</p>
+      </div>
+    </div>
+    <script>
+      let panels = document.querySelectorAll(".panel");
+
+      function openPanel(e) {
+        // console.log(e);
+        this.classList.toggle("open");
+      }
+
+      function panelActive(e) {
+        console.log(e.propertyName);
+        if (e.propertyName.indexOf("flex") !== -1) {
+          //確保.open裡面的flex做完我才接著做
+          this.classList.toggle("open-active");
+        }
+      }
+
+      panels.forEach((panel) => {
+        panel.addEventListener("click", openPanel);
+        panel.addEventListener("transitionend", panelActive);
+        //針對這個panel的transition結束後要做甚麼事情 該範例為控制class
+      });
+
+      //整體思路
+      /*
+      版面部分:
+      透過flex來做切版，flex:1 & flex:5 來作為初始的版面均分以及點擊後的佔比，包含文字的版面配置
+      以transition+cubic-bezeir來做切換的效果動畫
+      box-shadow設inset改為內陰影
+      drop-shadow更為靈活
+
+      功能部分:
+      先抓到觸發點 = 抓到每一個panel
+      多個就用querySelectorAll 抓回nodeList用forEach加上事件監聽後觸發
+      切換類型的就用toggle來開關class
+      該範例有兩段 分別為圖片放大後再做文字彈入
+      所以文字彈入的觸發時機就是點擊後的transition結束的瞬間
+      使用transitionend事件監聽觸發第二段的transition
+      特別注意若是偶數個transition屬性的話要加判斷式 
+      不然偶數等於觸發兩次transitionend會直接開關 = 沒效果
+      奇數的話則剛好避開BUG
+      若嚴謹一點的話就都下判斷式
+      用屬性名稱裡面如何如何就做什麼
+      */
+    </script>
+  </body>
+</html>

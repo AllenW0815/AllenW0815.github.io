@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --spacing: 10px;
+  --color: #bada55;
+  --blur: 0px;
+}
+
+h1 {
+  color: var(--color);
+}
+
+img {
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+  background-color: var(--color);
+}
+
+/* ^^變數使用^^ */
+
+body {
+  text-align: center;
+  font-size: 36px;
+  background-color: rgb(12, 1, 41);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+.control {
+  margin-bottom: 25px;
+}

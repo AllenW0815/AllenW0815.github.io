@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Clock-real.css" />
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand second-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand hour-hand"></div>
+      </div>
+    </div>
+
+    <script>
+      const second = document.querySelector(".second-hand");
+      const minute = document.querySelector(".minute-hand");
+      const hour = document.querySelector(".hour-hand");
+
+      function setClock() {
+        const date = new Date();
+        const ssDeg = date.getSeconds() * 6;
+        const mmDeg = date.getMinutes() * 6 + (date.getSeconds() * 6) / 60;
+        const hhDeg = date.getHours() * 30 + (date.getMinutes() * 30) / 60;
+        // 更精準的角度
+        // 後面+的是每一分鐘6度內被切為60等份
+        // 再來+的是每一小時30度被切為60等份
+
+        second.style.transform = `rotate(${ssDeg}deg)`;
+        minute.style.transform = `rotate(${mmDeg}deg)`;
+        hour.style.transform = `rotate(${hhDeg}deg)`;
+      }
+
+      setInterval(setClock, 1000);
+
+      //整體思路
+      //此版本是正確的世界時間
+      /*
+      先抓出3個要控制的指針DOM
+      function內定抓出時分秒現在的角度(見上方)
+      將對應的DOM旋轉至正確的角度位置
+      每隔一秒執行一次更新
+        */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Fetch&Regex.css" />
+  </head>
+  <body>
+    <form class="search-form">
+      <input type="text" class="search" placeholder="Type Here" />
+      <ul class="sugestions">
+        <li>Filter For A City</li>
+        <li>Or A State</li>
+      </ul>
+    </form>
+
+    <script>
+      const ebdpoint =
+        "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+      let cities = null;
+      fetch(ebdpoint)
+        .then((o) => o.json())
+        .then((data) => (cities = data));
+      //抓到這個資料
+
+      function matchHandler() {}
+
+      const searchInput = document.querySelector(".search");
+      const sugestions = document.querySelector(".sugestions");
+
+      searchInput.addEventListener("change", matchHandler);
+    </script>
+  </body>
+</html>

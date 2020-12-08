@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url(./img/clock-BG.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 200vh;
+}
+
+.clock {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 10px solid #fff;
+  width: 350px;
+  height: 350px;
+  box-sizing: border-box;
+  box-shadow: 0 0 25px #fff;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.second-hand {
+  /* width: 150px;
+  height: 5px;
+  background-color: #fff; */
+  border-width: 3px 0 3px 160px;
+  border-color: transparent transparent transparent #fff;
+  border-style: solid;
+  border-radius: 3px 0 0 3px;
+  position: absolute;
+  top: 168px;
+  left: 165px;
+  transform-origin: 0;
+  transform: rotate(-90deg);
+  transition: 0.05s;
+  z-index: 3;
+}
+.minute-hand {
+  /* width: 150px;
+  height: 5px;
+  background-color: #fff; */
+  border-width: 3px 0 3px 120px;
+  border-color: transparent transparent transparent rgb(169, 255, 255);
+  border-style: solid;
+  border-radius: 3px 0 0 3px;
+  position: absolute;
+  top: 168px;
+  left: 165px;
+  transform-origin: 0;
+  transform: rotate(-90deg);
+  transition: 0.1s;
+  z-index: 2;
+}
+.hour-hand {
+  /* width: 150px;
+  height: 5px;
+  background-color: #fff; */
+  border-width: 3px 0 3px 80px;
+  border-color: transparent transparent transparent rgb(248, 255, 148);
+  border-style: solid;
+  border-radius: 3px 0 0 3px;
+  position: absolute;
+  top: 168px;
+  left: 165px;
+  transform-origin: 0;
+  transform: rotate(-90deg);
+  transition: 0.2s;
+  z-index: 1;
+}
