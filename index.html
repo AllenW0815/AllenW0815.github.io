@@ -11,46 +11,148 @@
         box-sizing: border-box;
       }
       body {
-        max-width: 70vw;
-        height: 100vh;
-        overflow: hidden;
-        margin: 0 auto;
-        padding: 3rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100vh;
+        background-color: #080b1f;
+        overflow: hidden;
       }
-      a {
-        display: inline-block;
-        background: none;
-        border: 1px solid rgb(195, 238, 166);
-        text-decoration: none;
-        color: rgb(195, 238, 166);
-        padding: 0.5rem 1rem;
-        border-radius: 50px;
-        margin: 5px 10px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul li {
+        list-style: none;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+      }
+
+      ul li::before {
+        content: attr(data-text);
+        position: absolute; /*依父層定位在後方*/
+        /*將要後顯的文字集中到中間位置*/
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 900;
+        font-size: 120px;
+        opacity: 0;
+        pointer-events: none; /*不影響到滑鼠指定*/
         transition: 0.5s;
       }
-      a:hover {
-        background-color: rgb(195, 238, 166);
+
+      ul li:hover::before {
+        opacity: 0.15;
+      }
+
+      ul li a {
+        position: relative; /*不下的話左方有奇怪東西出現*/
+        display: inline-block; /*要下才能吃到hover的scale效果*/
+        text-decoration: none;
+        padding: 5px 15px;
         color: #fff;
+        transition: 0.3s;
+        /* z-index: 1; */
+        background-color: rgb(43, 218, 241);
+        overflow: hidden;
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border-radius: 5px;
+      }
+
+      ul:hover li a {
+        opacity: 0; /*hover到ul時變不見*/
+      }
+      ul li a:hover {
+        background-color: #ff3f81;
+        transform: scale(1.8);
+        z-index: 2;
+        opacity: 1; /*hover到a的時候顯示*/
+      }
+      /*拋光效果*/
+      ul li a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100px; /*起始位置*/
+        width: 80px;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.8),
+          transparent
+        );
+        transform: skewX(40deg);
+      }
+
+      ul li a:hover::before {
+        left: 170px; /*終點位置*/
+        transition: 0.8s;
+        transition-delay: 0.1s;
       }
     </style>
   </head>
   <body>
-    <a href="https://allenw0815.github.io/1091126_loginPage/loginPage.html"
-      >登入頁面轉場效果</a
-    >
-    <a href="https://allenw0815.github.io/1091123/homePagePicChange.html"
-      >homePagePicChange</a
-    >
-    <a href="https://allenw0815.github.io/1091122/homePageOcean.html"
-      >homePageOcean</a
-    >
-    <a href="https://allenw0815.github.io/1091126_loginPage/loginPage.html"
-      >loginPage</a
-    >
-    <a href="https://allenw0815.github.io/1091124/PS5.html">PS5 sale</a>
-    <a href="https://allenw0815.github.io/cssEffect/01/01.html">cssEffect 01</a>
+    <ul>
+      <li data-text="登入頁面轉場效果">
+        <a href="https://allenw0815.github.io/1091126_loginPage/loginPage.html"
+          >登入頁面轉場效果</a
+        >
+      </li>
+      <li data-text="更換背景圖">
+        <a href="https://allenw0815.github.io/1091123/homePagePicChange.html"
+          >更換背景圖</a
+        >
+      </li>
+      <li data-text="海洋氣泡動畫首頁(RWD)">
+        <a href="https://allenw0815.github.io/1091122/homePageOcean.html"
+          >海洋氣泡動畫首頁(RWD)</a
+        >
+      </li>
+      <li data-text="賣PS5(RWD)">
+        <a href="https://allenw0815.github.io/1091124/PS5.html">賣PS5(RWD)</a>
+      </li>
+      <li data-text="圖片彈出效果">
+        <a href="https://allenw0815.github.io/cssEffect/01/01.html"
+          >圖片彈出效果</a
+        >
+      </li>
+      <li data-text="紓壓小遊戲-絕命懸崖">
+        <a href="https://allenw0815.github.io/game/HomeWork.html"
+          >紓壓小遊戲-絕命懸崖</a
+        >
+      </li>
+      <li data-text="JS30-彈跳畫面">
+        <a href="https://allenw0815.github.io/JS30/Day05/Flex-panel.html"
+          >JS30-彈跳畫面</a
+        >
+      </li>
+      <li data-text="JS30-CSS變數">
+        <a href="https://allenw0815.github.io/JS30/Day03/CSS-variable.html"
+          >JS30-CSS變數</a
+        >
+      </li>
+      <li data-text="JS30-時鐘">
+        <a href="https://allenw0815.github.io/JS30/Day02/Clock-real.html"
+          >JS30-時鐘</a
+        >
+      </li>
+      <li data-text="JS30-打鼓囉">
+        <a href="https://allenw0815.github.io/JS30/Day01/DrumKit.html"
+          >JS30-打鼓囉</a
+        >
+      </li>
+    </ul>
   </body>
 </html>
