@@ -20,7 +20,7 @@ button:focus {
 
 a {
   text-decoration: none;
-  color: #696969;
+  color: #000;
 }
 
 .container {
@@ -152,4 +152,33 @@ span {
     height: 150px;
     opacity: 0;
   }
+}
+
+/*自我介紹*/
+.about {
+  /* background-color: rgb(253, 192, 192); */
+  min-height: 80vh;
+  width: 30rem;
+  background-image: url(img/about.png);
+  background-size: cover;
+  transition: 1s ease-in-out;
+  transition: 1.5s;
+  transform: translateY(-800px);
+}
+.about1 {
+  transform: translateY(0px);
+}
+
+/*工作經歷*/
+.workExp {
+  /* background-color: rgb(253, 192, 192); */
+  min-height: 80vh;
+  width: 30rem;
+  background-image: url(img/workExp.png);
+  background-size: cover;
+  transition: 1.8s;
+  opacity: 0;
+}
+.workExp1 {
+  opacity: 1;
 }

@@ -10,8 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+      integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
+    <div class="about"></div>
     <div class="container">
       <div class="card">
         <div class="avatar">
@@ -20,24 +27,25 @@
         <div class="info">
           <h1 class="title">前端工程師</h1>
           <h3>Allen Wang</h3>
-          <h3>
-            我叫王淇生，目前正在學習網頁前端的相關技術，期望成為一位有多項專長的設計工程師
+          <h3 id="contact">
+            我叫王淇生，目前正在學習網頁設計及前端的相關技術，期望成為一位獨當一面的工程師、設計師
           </h3>
           <div class="link">
-            <button><a href="#">關於我</a></button>
-            <button><a href="#">聯絡資訊</a></button>
+            <button id="aboutBtn">自我簡介</button>
+            <button id="contactBtn">聯絡資訊</button>
             <button class="active">
               <a href="https://allenw0815.github.io/index.html">作品連結</a>
             </button>
-            <button><a href="#">工作經歷</a></button>
+            <button id="workExpBtn">工作經歷</button>
           </div>
           <div class="hire">
-            <button>明天來上班</button>
+            <button id="hireBtn">面試邀約</button>
           </div>
         </div>
       </div>
       <div id="pointer"></div>
     </div>
+    <div class="workExp"></div>
     <!-- 
       設定container為了區分事件觸發的範圍，不會是全屏有效果，並且因為3D的效果會讓設定在card上不順暢，所以需要較大範圍container
      -->
