@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #e9e9e9;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  -webkit-box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+          box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+main input,
+main button {
+  outline: none;
+  border: none;
+}
+
+main input::-webkit-outer-spin-button,
+main input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main input {
+  -webkit-box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  width: 320px;
+  height: 60px;
+  padding: 16px 32px;
+  border-radius: 30px;
+  text-align: right;
+  text-shadow: -1px -1px rgba(0, 0, 0, 0.3);
+}
+
+main .keys {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.8rem;
+  margin-top: 30px;
+}
+
+main .keys button {
+  -webkit-box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+          box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4);
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #e9e9e9;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+main .keys button:hover, main .keys button:active {
+  background: #ccc;
+}
+
+main .keys button:active {
+  -webkit-box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+}
+
+main .keys .key,
+main .keys .clearKey {
+  color: #ff652f;
+}
+
+main .keys .equalKey {
+  color: #2f44ff;
+}
+/*# sourceMappingURL=Calculator.css.map */
