@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&family=Satisfy&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Satisfy", cursive;
+}
+
+body {
+  overflow: hidden;
+}
+
+article {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+article section {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+}
+
+article section .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff, #e4e3e8);
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+article section .circle h2 {
+  z-index: 1;
+  font-size: 3em;
+  color: #ff2a2a;
+}
+
+article section .circle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: linear-gradient(315deg, #fff, #e4e3e8);
+  border-radius: 50%;
+}
+
+article section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(#202020), to(#fafafa));
+  background: linear-gradient(to right, #202020, #fafafa);
+  opacity: 0.2;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+article span {
+  position: absolute;
+  background: #ff2a2a;
+  border-radius: 50%;
+  visibility: none;
+  -webkit-animation: upup linear infinite;
+          animation: upup linear infinite;
+}
+
+article span:nth-child(odd) {
+  background: transparent;
+  border: 1px solid #ff2a2a;
+}
+
+@-webkit-keyframes upup {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(120px);
+            transform: translateY(120px);
+    opacity: 0;
+  }
+}
+
+@keyframes upup {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(120px);
+            transform: translateY(120px);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=chrismas_animation.css.map */
