@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 300vh;
+}
+
+.effect01 {
+  width: 100%;
+  height: 100vh;
+  background-color: #e8f8fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  /* display: none; 暫時關閉用 */
+}
+
+.circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/*下方陰影 共用*/
+.effect01 .circle::before,
+.effect02 .outter::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 10%;
+  border-radius: 50%;
+  left: 0;
+  bottom: -150px;
+  filter: blur(5px);
+  background: radial-gradient(rgb(0, 0, 0, 0.1), transparent, transparent);
+}
+
+.c01 {
+  background-color: rgb(125, 237, 252);
+  animation: momoving 1.2s ease-in-out infinite;
+}
+
+.c02 {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: momoving2 1.2s ease-in-out infinite;
+}
+
+@keyframes momoving {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+}
+@keyframes momoving2 {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-150px);
+  }
+}
+
+/*02*/
+
+.effect02 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #faece8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  /* display: none; 暫時關閉用 */
+}
+
+.outter {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 1;
+}
+
+.inner {
+  position: absolute;
+  top: calc(50%-85px);
+  left: calc(50%-85px);
+  /*要用calc在定位的時候就定好實際的位置，
+  不要用transform假定位置，不然再旋轉時會出錯*/
+  width: 170px;
+  height: 170px;
+  animation: rorotating 1.5s linear infinite;
+  /*擋住讓矩形與圓形交集產生4/1圓*/
+  overflow: hidden;
+  /* border: 1px solid #ddd; */
+}
+
+@keyframes rorotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.inner::before {
+  content: "";
+  background-color: rgb(252, 125, 125);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+}
+
+/*03*/
+
+.effect03 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #eefae8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.box {
+  width: 20%;
+  height: 12%;
+  /* background-color: #ccc; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box span {
+  display: inline-block;
+  width: 10px;
+  height: 100%;
+  margin: 0 5px;
+  background-color: rgb(155, 252, 125);
+  border-radius: 20px 20px;
+  animation: flexible 0.9s linear infinite;
+}
+
+@keyframes flexible {
+  0%,
+  100% {
+    height: 100%;
+  }
+  50% {
+    height: 0;
+  }
+}
+
+.box span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.box span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.box span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.box span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.box span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.box span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.box span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.box span:nth-child(9) {
+  animation-delay: 0.8s;
+}
