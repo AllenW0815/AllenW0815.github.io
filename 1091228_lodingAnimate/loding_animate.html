@@ -28,5 +28,63 @@
         <span></span>
       </div>
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script></script>
+    <script>
+      //檢視各個目標的TOP位置數值
+      console.log($(".effect01").position().top);
+      console.log($(".effect02").position().top);
+      console.log($(".effect03").position().top);
+      //測試哪個在滾動時有變化
+      $(window).on("scroll", function () {
+        //結果都是0
+        console.log("body :" + $("body").scrollTop());
+        //有數值變化
+        console.log("html :" + $("html").scrollTop());
+      });
+
+      //開始動作
+      $(".effect01").on("click", function () {
+        let po2 = $(".effect02").position().top;
+        $("html").animate(
+          {
+            scrollTop: po2,
+          },
+          1000
+        );
+      });
+      $(".effect02").on("click", function () {
+        let po3 = $(".effect03").position().top;
+        $("html").animate(
+          {
+            scrollTop: po3,
+          },
+          1000
+        );
+      });
+      $(".effect03").on("click", function () {
+        let po1 = $(".effect01").position().top;
+        $("html").animate(
+          {
+            scrollTop: po1,
+          },
+          1500
+        );
+      });
+
+      /*整理思路
+        點擊第1區的時候自動轉到第2區;
+        第2區的時候自動轉到第3區;
+        第3區的時候自動轉到第1區，
+        透過找到每一個區域的Top數值來設定待會點擊的時候要轉到甚麼位置，
+        因為測試後發現滾動時是html有變化所以不用body
+        抓到html加上animate及持續時間來實現捲動的時候動畫效果
+      */
+    </script>
   </body>
 </html>
